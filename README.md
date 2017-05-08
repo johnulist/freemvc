@@ -15,7 +15,6 @@ Mini MVC
 [Version 0.1] 
 
 #### Estructura
-- 
 <ul>
 <li>mini-mv
 <ul>
