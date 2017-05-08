@@ -1,4 +1,4 @@
-<?php  namespace controllers\Contact;
+<?php
 
 
 use Core\Controller;
