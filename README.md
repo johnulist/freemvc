@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-
-# mini-mvc
-Mini MVC
-=======
+ # mini-mvc
+ 
 ## mini-mvc 
 
  
->>>>>>> 4f5412f4fe64ead92b0657e8c154525dc5a192cc
-
  #### Lista de clases
 - DB
 - Auth
