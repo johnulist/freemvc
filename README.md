@@ -61,3 +61,6 @@
     DB->select('select name FROM user');
 
 </code>
+
+### Para utlizar el metodo upload tienen que consultar esta documentación:
+<a href='https://github.com/verot/class.upload.php' target='_blank'>class.upload.php</a>

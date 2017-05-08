@@ -1,6 +1,6 @@
 <?php namespace Core;
 
-use Core\View;
+
 /**
  * Description of Controller
  *
