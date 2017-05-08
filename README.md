@@ -14,6 +14,20 @@ Mini MVC
 
 [Version 0.1] 
 
+#### Estructura
+- 
+<ul>
+<li>mini-mv
+<ul>
+    <li>Core</li>
+    <li>controller</li>
+    <li>models</li>
+    <li>views</li>
+    
+</ul>
+</li>
+ </ul>
+
 
 ### Class: DB
 
