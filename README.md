@@ -39,7 +39,8 @@ Mini MVC
     DB->select('select name FROM user WHERE id=:id',['id' => 1]);
 
 </code>
-### O también un select normal
+
+## También un select normal
 <code>
 
     DB->select('select name FROM user');
