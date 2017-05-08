@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Description of Model
+ * Algunos cambias ya han sifo aplicados,
+ * Refactorización del código
  *
- * @author Angel de la cruz
+ * @author Angel de la cruz <angeldelacruzdev@gmail.com>
  *
- * Codesourse
+ * Codesourse:  Este mvc básico fue tomando del canal Codesourse y algunas modificaciones agregadas por mi.
  */
 
 /**

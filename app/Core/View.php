@@ -13,27 +13,31 @@ namespace Core;
  *
  * @author Angel de la cruz
  */
-class View {
+class View
+{
 
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
-     * 
+     *
      * @param type $view nombre de la vista
      * @param type $data array con datos para presentar en la vista
      */
-    public function view($view, $data = []) {
+    public function view($view, $data = [])
+    {
 
-        require_once '../app/views/' . $view . '.php';
+        if (!empty($view)):
+            require_once '../app/views/' . $view . '.php';
+        else:
+            return [
+                'error' => 'warning',
+                'msg' => "No se pudo encontrar ninguna vista",
+                'notification' => "Notificación"
+            ];
+        endif;
     }
 
-    /**
-     * @param $css string que se pasa por parametro.
-     */
-    public function RUTE_CSS($css){
-
-
-
-    }
 
 }
