@@ -46,7 +46,7 @@ class App
 
 
         $url = $this->parseUrl();
-
+        
         $this->_getController($url);
 
         $this->_getMethod($url);

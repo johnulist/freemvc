@@ -1,5 +1,4 @@
-<?php namespace App\controllers;
-
+<?php  namespace controllers\Contact;
 
 
 use Core\Controller;
