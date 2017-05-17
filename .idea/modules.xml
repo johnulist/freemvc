@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../projects/evolucionrd/.idea/evolucionrd.iml" filepath="$PROJECT_DIR$/../projects/evolucionrd/.idea/evolucionrd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../imeiphone/.idea/imeiphone.iml" filepath="$PROJECT_DIR$/../imeiphone/.idea/imeiphone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../projects/itn_school/.idea/itn_school.iml" filepath="$PROJECT_DIR$/../projects/itn_school/.idea/itn_school.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mvcframework.iml" filepath="$PROJECT_DIR$/.idea/mvcframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tutorial/.idea/tutorial.iml" filepath="$PROJECT_DIR$/../tutorial/.idea/tutorial.iml" />
     </modules>
   </component>
 </project>

@@ -23,7 +23,7 @@ class App
      *
      * @var string
      */
-    protected $_controller = 'home';
+    protected $_controller = 'Home';
 
     /**
      * Method default

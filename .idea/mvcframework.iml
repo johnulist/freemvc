@@ -4,5 +4,9 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="itn_school" />
+    <orderEntry type="module" module-name="tutorial" />
+    <orderEntry type="module" module-name="evolucionrd" />
+    <orderEntry type="module" module-name="imeiphone" />
   </component>
 </module>

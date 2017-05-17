@@ -7,9 +7,6 @@ php_flag expose_php off
 php_flag display_errors on
 
 RewriteEngine on
-RewriteBase /mini-mvc/public_html
-
-
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
