@@ -28,7 +28,10 @@ class Home extends Controller
          * JS
          */
         $view->jquery = 'js/jQuery-2.0.3.js';
+        $view->jquery_validate = 'js/validate/jquery.validate.min.js';
+        $view->additional_methods = 'js/validate/additional-methods.min.js';
         $view->semanticjs = 'semantic-ui/semantic.min.js';
+        $view->app = 'js/app.js';
         $view->view('home/index');
 
     }
