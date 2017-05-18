@@ -75,7 +75,7 @@ class Session {
 
         $db = new DB();
 
-        $result = $db->select('SELECT * FROM users WHERE id=:id LIMIT 1', array('id' => $_SESSION['userid']));
+        $result = $db->select('SELECT * FROM users WHERE id=:id LIMIT 1', array('id' => $_SESSION['user_id']));
         foreach ($result as $value) {
             return $value;
         }

@@ -16,10 +16,6 @@ namespace Core;
 class View
 {
 
-    public function __construct()
-    {
-    }
-
     /**
      *
      * @param type $view nombre de la vista

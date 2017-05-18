@@ -6,12 +6,15 @@
         <!-- CSS -->
         <link rel="stylesheet" href="<?=$this->semantic_css?>">
         <link rel="stylesheet" href="<?=$this->bootstrap_css?>">
+        <link rel="stylesheet" href="<?=$this->sweetalert_css?>">
+        <link rel="stylesheet" href="<?=$this->animate?>">
         <link rel="stylesheet" href="<?=$this->style_css?>">
 
         <!-- JS -->
         <script src="<?=$this->jquery?>"></script>
         <script src="<?=$this->jquery_validate?>"></script>
         <script src="<?=$this->additional_methods?>"></script>
+        <script src="<?=$this->sweetalert_js?>"></script>
         <script src="<?=$this->semanticjs?>"></script>
         <script src="<?=$this->app?>"></script>
 
@@ -34,10 +37,14 @@
                           </div>
                           <div class="field">
                               <label>Password:</label>
-                              <input type="password" name="password" id="password"  tabindex="2" placeholder="Password" autocomplete="off" required>
+                              <input type="password" name="password" id="password"  tabindex="2" placeholder="Password" autocomplete="off" maxlength="24" minlength="6" required>
                           </div>
                           <div class="field text-center">
-                              <button type="submit" class="ui green button text-uppercase">Login</button>
+                              <div class="ui large buttons">
+                                  <button type="submit" id="submit" class="ui green button text-uppercase">Login</button>
+                                  <div class="or"></div>
+                                  <a href="<?=$this->URL?>home/register/" class="ui black button ">Create account</a>
+                              </div>
                           </div>
                       </form>
                     </div>

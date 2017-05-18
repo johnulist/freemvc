@@ -13,14 +13,14 @@ namespace Core;
  *
  * @author Angel de la cruz
  */
-class DB extends PDO {
+class DB extends \PDO {
 
     private $_host = "127.0.0.1";
     private $_username = "root";
     private $_password = "";
 
 
-    private $_dbname = "";
+    private $_dbname = "mini_mvc";
 
     public function __construct() {
 
@@ -28,8 +28,8 @@ class DB extends PDO {
         try {
             parent::__construct("mysql:host={$this->_host};dbname={$this->_dbname};charset=utf8", "{$this->_username}", "{$this->_password}");
 
-            $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $ex) {
+            $this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        } catch (\PDOException $ex) {
             die($ex->getMessage());
         }
     }
@@ -44,7 +44,7 @@ class DB extends PDO {
      * Por ejemplo: DB->select('select name FROM user WHERE id=:id',['id' => 1]);
      *
      */
-    public function select($sql, $array = array(), $fetchMode = PDO::FETCH_OBJ) {
+    public function select($sql, $array = array(), $fetchMode = \PDO::FETCH_OBJ) {
 
         try {
             $stm = $this->prepare($sql);
@@ -52,12 +52,9 @@ class DB extends PDO {
             foreach ($array as $key => $value) {
                 $stm->bindValue(":$key", $value);
             }
-
-
             $stm->execute();
-
             return $stm->fetchAll($fetchMode);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return [
                 'error' => 'warning',
                 'msg' => "Ocurrio un error al seleccionar los datos: {$e}",
@@ -95,8 +92,9 @@ class DB extends PDO {
             ];
         } else {
             return [
-                'error' => 'wan',
-                'msg' => "danger"
+                'error' => 'warning',
+                'msg' => "Un error al insertar los datos.",
+                'notification' => "Problema!"
             ];
         }
     }
@@ -145,7 +143,7 @@ class DB extends PDO {
                     'notification' => " "
                 ];
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             die($e->getMessage());
         }
     }
