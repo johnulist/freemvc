@@ -33,10 +33,10 @@ class Auth {
     /**
      * Destruye la sesion
      */
-    public function logout(){
-          $_SESSION['loggIn'];
+    public static function logout(){
+            $_SESSION['loggIn'];
             Session::destroy();
-            header('location: Home');
+            header("location: ../../Home");
             exit;
         }
 

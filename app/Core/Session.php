@@ -57,11 +57,13 @@ class Session {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]
             );
+
         }
 
         // Finalmente, destruir la sesión.
 
         session_destroy();
+
     }
 
     /**
@@ -75,10 +77,19 @@ class Session {
 
         $db = new DB();
 
-        $result = $db->select('SELECT * FROM users WHERE id=:id LIMIT 1', array('id' => $_SESSION['user_id']));
+        $result = $db->select('SELECT * FROM login WHERE user_id=:id LIMIT 1', array('id' => $_SESSION['user_id']));
         foreach ($result as $value) {
             return $value;
         }
+    }
+
+    /**
+     * Returna el nombre de la sesion
+     * @return mixed
+     */
+    public static function nameSession(){
+        $name_session = $_SERVER['loggIn'];
+        return $name_session;
     }
 
 }

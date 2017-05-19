@@ -1,6 +1,4 @@
 
-Options -MultiViews
-
 ## Seguridad extra para PHP
 php_flag safe_mode on
 php_flag expose_php off
@@ -32,7 +30,8 @@ RewriteCond %{QUERY_STRING} ^(.*)('|-|<|>|,|/|\\|\.a|\.c|\.t|\.d|\.p|\.i|\.e|\.j
 RewriteCond %{HTTP_COOKIE} ^(.*)(<|>|'|%3C|%3E|%27)(.*) [NC]
 
 
-
+RewriteCond %{REQUEST_METHOD} ^TRACE
+RewriteRule .* - [F]
 
 
 ## Manejo de errores de Apache. Cuando se produzca uno de estos errores, redirigimos a una pagina especial desarrollada por nosotros.

@@ -41,7 +41,7 @@ class Login{
             //loggin
             Session::init();
             Session::set('role', $data_session['role_id']);
-            Session::set('userid', $data_session['user_id']);
+            Session::set('user_id', $data_session['user_id']);
             Session::set('name', $data_session['name']);
             Session::set('lastname', $data_session['lastname']);
             Session::set('loggIn', true);

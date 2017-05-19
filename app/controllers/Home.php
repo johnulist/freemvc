@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 use Core\Controller;
 use Core\View;
 use Core\Security;
@@ -48,8 +51,6 @@ class Home extends Controller
         sleep(3);
 
         $security = new Security();
-
-
         $email      =  $security::Escape($_POST['email']);
         $password   =  $security::Escape($_POST['password']);
 

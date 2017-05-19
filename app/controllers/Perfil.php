@@ -1,27 +1,29 @@
 <?php
 
-use Core\Controller;
-use Core\View;
-use Core\Auth;
-use Core\Session;
-
 /**
  * Created by PhpStorm.
  * User: angel
- * Date: 18/05/2017
- * Time: 12:25
+ * Date: 19/05/2017
+ * Time: 15:41
  */
-class Administracion extends Controller{
+
+
+use Core\Controller;
+use Core\Auth;
+use Core\Session;
+use Core\View;
+
+class Perfil extends Controller {
 
     public function __construct(){
+        parent::__construct();
 
-        $Auth = new Auth();
-
-        $Auth::handleLogin();
+        Auth::handleLogin();
 
     }
 
     public function index(){
+
         $view = new View();
         $view->name = 'Panel';
 
@@ -49,7 +51,10 @@ class Administracion extends Controller{
         $view->URL = $this->URL_SELF();
         $view->DATA = Session::login();
 
-        $view->view('Admin/index');
+        $view->view('Perfil/index');
+
     }
+
+
 
 }

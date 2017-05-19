@@ -6,7 +6,6 @@ $(function () {
 
     var FORM_LOGON = $('#formLogin');
 
-
     FORM_LOGON.validate({
 
         rules: {
@@ -46,8 +45,12 @@ $(function () {
             data:data,
             beforeSend:function () {
                 $('#submit').addClass('loading');
+                $('#email').attr('disabled','disabled');
+                $('#password').attr('disabled','disabled');
             },
             success:function (data) {
+                $('#email').removeAttr('disabled');
+                $('#password').removeAttr('disabled');
                 $('#submit').removeClass('loading');
                 if (data.msg === 'login') {
                     window.location.replace('Administracion');
@@ -58,8 +61,7 @@ $(function () {
                         type: data.type,
                         html:'<h2>'+data.msg+'</h2>',
                         showCloseButton: true,
-                        confirmButtonText:
-                            '<i class="fa fa-thumbs-up"></i> Aceptar!'
+                        confirmButtonText:'<i class="fa fa-thumbs-up"></i> Aceptar!'
                     });
                 }
             }

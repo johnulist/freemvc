@@ -38,13 +38,9 @@ class App
      */
     protected $_params = [];
 
-    /**
-     *  Carga los controladores
-     */
+
     public function __construct()
     {
-
-
 
         $url = $this->parseUrl();
 
@@ -68,7 +64,9 @@ class App
         }
     }
 
-
+    /**
+     * @param $url
+     */
     private function _getController($url)
     {
 
@@ -79,10 +77,11 @@ class App
 
         require_once '../app/controllers/' . $this->_controller . '.php';
         $this->_controller = new $this->_controller;
-
-
     }
 
+    /**
+     * @param $url
+     */
     private function _getMethod($url)
     {
 
@@ -94,7 +93,9 @@ class App
         }
     }
 
-
+    /**
+     * @param $url
+     */
     private function _getParameter($url)
     {
         $this->_params = $url ? array_values($url) : [];

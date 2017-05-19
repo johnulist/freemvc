@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="<?=$this->sweetalert_css?>">
         <link rel="stylesheet" href="<?=$this->animate?>">
         <link rel="stylesheet" href="<?=$this->style_css?>">
-
         <!-- JS -->
         <script src="<?=$this->jquery?>"></script>
         <script src="<?=$this->jquery_validate?>"></script>
@@ -17,7 +16,6 @@
         <script src="<?=$this->sweetalert_js?>"></script>
         <script src="<?=$this->semanticjs?>"></script>
         <script src="<?=$this->app?>"></script>
-
     </head>
     <body>
         <div class="container">

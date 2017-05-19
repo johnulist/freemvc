@@ -1,5 +1,4 @@
 <?php namespace Core;
-
 /**
  * Description of Security
  * 
@@ -22,5 +21,7 @@ class Security {
             return $value;
         }
     }
+
+
 
 }

@@ -7,12 +7,23 @@ use Core\View;
  *
  * @author Angel De La Cruz
  */
-class Controller {
+
+
+Abstract class Controller {
+
+    abstract public function index();
+
+    public $view;
 
     public function __construct() {
         $this->view = new View();
+
     }
 
+    /**
+     * URL
+     * @return string
+     */
     public function URL_SELF(){
 
         $http = $_SERVER['REQUEST_SCHEME'];
