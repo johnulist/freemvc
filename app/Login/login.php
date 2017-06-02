@@ -47,6 +47,7 @@ class Login{
             Session::set('loggIn', true);
             return [
                 'msg' => "login",
+                'url' => "Administracion"  
             ];
         } else {
             return [
@@ -54,12 +55,7 @@ class Login{
                 'error' =>  'notificación',
                 'msg'   =>  'Contraseña o correo invalido!',
             ];
-            
+
         }
     }
 }
-
-
-
-
-

@@ -53,7 +53,7 @@ $(function () {
                 $('#password').removeAttr('disabled');
                 $('#submit').removeClass('loading');
                 if (data.msg === 'login') {
-                    window.location.replace('Administracion');
+                    window.location.replace(data.url);
                 }
                 else {
                     swal({
