@@ -13,17 +13,28 @@ namespace Core;
  *
  * @author Angel de la cruz
  */
-class DB extends \PDO {
+class DB extends \PDO
+{
 
+    /**
+     * @var string nombre del hosting
+     */
     private $_host = "127.0.0.1";
+    /**
+     * @var string nombre de usuario del servidor
+     */
     private $_username = "root";
+    /**
+     * @var string contrseña del servidor
+     */
     private $_password = "";
-
-
+    /**
+     * @var string nombre de la base de datos
+     */
     private $_dbname = "mvcframework";
 
-    public function __construct() {
-
+    public function __construct()
+    {
 
         try {
             parent::__construct("mysql:host={$this->_host};dbname={$this->_dbname};charset=utf8", "{$this->_username}", "{$this->_password}");
@@ -44,7 +55,8 @@ class DB extends \PDO {
      * Por ejemplo: DB->select('select name FROM user WHERE id=:id',['id' => 1]);
      *
      */
-    public function select($sql, $array = array(), $fetchMode = \PDO::FETCH_OBJ) {
+    public function select($sql, $array = array(), $fetchMode = \PDO::FETCH_OBJ)
+    {
 
         try {
             $stm = $this->prepare($sql);
@@ -56,8 +68,10 @@ class DB extends \PDO {
             return $stm->fetchAll($fetchMode);
         } catch (\Exception $e) {
             return [
-                'error' => 'warning',
-                'msg' => "Ocurrio un error al seleccionar los datos: {$e}",
+                'code'  => false,
+                'type'  => 'warning',
+                'title' => 'Notificación',
+                'msg'   => "Ocurrio un error al seleccionar los datos: {$e}",
             ];
         }
     }
@@ -71,7 +85,8 @@ class DB extends \PDO {
      *
      * Por ejemplo: DB->update('users', $data)
      */
-    public function insert($table, $data) {
+    public function insert($table, $data)
+    {
 
         ksort($data);
         $fieldNames = implode(',', array_keys($data));
@@ -86,15 +101,17 @@ class DB extends \PDO {
          */
         if ($stm->execute()) {
             return [
+                'code'  => true,
                 'error' => 'success',
-                'msg' => "Registro realizado correctamente!",
-                'notification' => "Buen trabajo!"
+                'msg'   => "Registro realizado correctamente!",
+                'title' => "Buen trabajo!"
             ];
         } else {
             return [
+                'code'  => false,
                 'error' => 'warning',
-                'msg' => "Un error al insertar los datos.",
-                'notification' => "Problema!"
+                'msg'   => "Un error al insertar los datos.",
+                'title' => "Problema!"
             ];
         }
     }
@@ -113,7 +130,8 @@ class DB extends \PDO {
      *
      * DB->update('users',$data, "id=$id" );
      */
-    public function update($table, $data, $where) {
+    public function update($table, $data, $where)
+    {
 
         try {
             ksort($data);
@@ -132,15 +150,17 @@ class DB extends \PDO {
             }
             if ($stm->execute()) {
                 return [
-                    'error' => 'success',
-                    'msg' => "Se actualizo correctamente",
-                    'notification' => "Buen trabajo"
+                    'code'          => true,
+                    'error'         => 'success',
+                    'msg'           => "Se actualizo correctamente",
+                    'title'         => "Buen trabajo"
                 ];
             } else {
                 return [
+                    'code'  => false,
                     'error' => 'warning',
-                    'msg' => "No se pudo realizar el cambio",
-                    'notification' => " "
+                    'msg'   => "No se realizo el cambio, lo sentimos.",
+                    'title' => "Notificación"
                 ];
             }
         } catch (\Exception $e) {
@@ -159,12 +179,22 @@ class DB extends \PDO {
      * DB->delete('users', 'id=1');
      *
      */
-    public function delete($table, $where, $limit = 1) {
+    public function delete($table, $where, $limit = 1)
+    {
 
         if (!$this->exec("DELETE FROM {$table} WHERE {$where} LIMIT {$limit}")) {
             return [
-                'error' => 'danger',
-                'msg' => "Error al eliminar"
+                'code'  => false,
+                'error' => 'warning',
+                'msg'   => "No se elimino.",
+                'title' => "Notificación"
+            ];
+        }else{
+            return [
+                'code'  => true,
+                'error' => 'success',
+                'msg'   => "Se elimino correctamente.",
+                'title' => "Notificación"
             ];
         }
     }

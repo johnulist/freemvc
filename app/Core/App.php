@@ -50,6 +50,10 @@ class App
 
         $this->_getParameter($url);
 
+
+
+
+
     }
 
     /**
@@ -70,8 +74,10 @@ class App
     private function _getController($url)
     {
 
+
         if (file_exists('../app/controllers/' . $url[0] . '.php')) {
             $this->_controller = $url[0];
+
             unset($url[0]);
         }
 
@@ -86,7 +92,9 @@ class App
     {
 
         if (isset($url[1])) {
-            if (method_exists($this->_controller, $url[1])) {
+            if (!method_exists($this->_controller, $url[1])) {
+                header('Location: ../Home');
+            }else{
                 $this->_method = $url[1];
                 unset($url[1]);
             }
