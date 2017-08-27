@@ -20,7 +20,7 @@ class DB extends \PDO {
     private $_password = "";
 
 
-    private $_dbname = "mini_mvc";
+    private $_dbname = "mvcframework";
 
     public function __construct() {
 
