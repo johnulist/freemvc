@@ -1,0 +1,20 @@
+{
+    "name": "quanty/framework",
+    "description": "A Simple Framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Angel De La Cruz",
+            "email": "angeldelacruzdev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+
+}

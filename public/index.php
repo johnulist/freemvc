@@ -1,5 +1,6 @@
 <?php
 
+include '../vendor/autoload.php';
 
 require '../app/init.php';
 
